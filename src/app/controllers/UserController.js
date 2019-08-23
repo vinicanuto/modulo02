@@ -1,3 +1,4 @@
+import { updateLocale } from 'moment';
 import User from '../models/User';
 
 class UserController {
@@ -9,6 +10,10 @@ class UserController {
     const { id, name, email, provider } = await User.create(req.body);
 
     return res.json({ id, name, email, provider });
+  }
+
+  async update(req, res) {
+    return res.json({ ok: true });
   }
 }
 
